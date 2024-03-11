@@ -564,13 +564,6 @@ module tb;
     uvm_config_db#(virtual spi_i)::set(null, "*", "vif", vif);
     run_test("test");
    end
-  
-  
-  initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars;
-  end
- 
-  
+   
 endmodule
  
