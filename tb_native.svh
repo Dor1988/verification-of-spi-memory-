@@ -2,19 +2,16 @@
  import uvm_pkg::*;
  
  
-//////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
  
 interface spi_i;
-  
-    logic wr,clk,rst;
-    logic [7:0] addr, din;
-    logic [7:0] dout;
-    logic done, err;
-  
-endinterface 
  
- 
- 
+    logic clk, rst, cs, miso;
+    logic ready, mosi, op_done;
+      
+endinterface
+
  
 ////////////////////////////////////////////////////////////////////////////////////
 class spi_config extends uvm_object; /////configuration of env
