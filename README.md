@@ -18,9 +18,11 @@ This repository contains a UVM verification environment designed to verify a Ser
   + Driver Class: Drives transactions to the DUT.
   + Monitor Class: Monitors the DUT's output and captures the response for verification.
   + Scoreboard Class: Compares the expected and actual outputs for verification.
-  + Environment Class: Orchestrates the testbench components and provides the virtual interface (spi_if) to the DUT.
-  + 
+  + Environment Class: contain the testbench components.
+    
 ### 3.Testbench Top (tb):
-  +Instantiates the DUT and the verification environment.
-  +Drives the clock (clk) to the DUT.
-  +Sets up the simulation environment and runs the verification tests.
+  + Instantiates the DUT and the verification environment.
+  + Drives the clock (clk) to the DUT.
+  + Sets up the simulation environment and runs the verification tests.
+    
+This project serves as a comprehensive verification environment for validating the functionality and compliance of SPI communication protocols in hardware designs. It facilitates thorough testing and verification to ensure the reliability and correctness of SPI-based systems.
