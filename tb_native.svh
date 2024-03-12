@@ -223,7 +223,12 @@ class driver extends uvm_driver #(transaction);
   endtask
   
   ///////////////////////write 
+  
   task write_d();
+  vif.rst  <= 1'b1;
+  vif.cs   <= 1'b1;
+  vif.miso <= 1'bx;
+  @(posedge vif.clk);
   ////start of transaction
   vif.rst  <= 1'b0;
   vif.cs   <= 1'b0;//start of transaction making cs=0
@@ -246,6 +251,11 @@ class driver extends uvm_driver #(transaction);
   
  //////////////////read operation 
   task read_d();
+  
+  vif.rst  <= 1'b1;
+  vif.cs   <= 1'b1;
+  vif.miso <= 1'bx;
+  @(posedge vif.clk);
   ////start of transaction
   vif.rst  <= 1'b0;
   vif.cs   <= 1'b0;
@@ -535,6 +545,8 @@ endfunction
  
 virtual task run_phase(uvm_phase phase);
 phase.raise_objection(this);
+vif.rst<=1'b1;
+vif.cs   <= 1'b1; 
 wrrdb.start(e.a.seqr);
  
 phase.drop_objection(this);
