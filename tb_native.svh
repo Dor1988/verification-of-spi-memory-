@@ -273,6 +273,7 @@ class driver extends uvm_driver #(transaction);
    end
    `uvm_info("DRV", $sformatf("DATA READ addr : %0d dout : %0d",tr.addr,datard), UVM_MEDIUM);  // so we will compare the collected data by the monitor
   @(posedge vif.op_done);
+  vif.cs   <= 1'b1; // the end  of transaction
   
   endtask 
   
