@@ -2,16 +2,16 @@
  import uvm_pkg::*;
  
  
-
 ////////////////////////////////////////////////////////////
  
 interface spi_i;
  
-    logic clk, rst, cs, miso;
-    logic ready, mosi, op_done;
+    logic clk, rst, cs, miso; // notice that miso it is the line that the data goes from the driver into the memory
+    logic ready, mosi, op_done; // notice that mosi it is the line that the data goes from the memory outside of it 
       
-endinterface
-
+endinterface 
+ 
+ 
  
 ////////////////////////////////////////////////////////////////////////////////////
 class spi_config extends uvm_object; /////configuration of env
@@ -27,13 +27,13 @@ endclass
  
 //////////////////////////////////////////////////////////
  
-typedef enum bit [1:0]   {readd = 0, writed = 1, rstdut = 2} oper_mode;
+typedef enum bit [1:0]   {readd = 0, writed = 1, rstdut = 2} oper_mode; // for verify the memory we considring only 3 operations write,read,rst 
  
  
 class transaction extends uvm_sequence_item;
-    randc logic [7:0] addr;
-    rand logic [7:0] din;
-         logic [7:0] dout;
+    randc logic [7:0] addr;// not exist at the dut, just for work convenience with transactions
+    rand logic [7:0] din;// not exist at the dut, just for work convenience with transactions
+         logic [7:0] dout;// not exist at the dut, just for work convenience with transactions
     rand oper_mode   op;
          logic rst;
     rand logic miso;
@@ -70,7 +70,7 @@ endclass : transaction
 ///////////////////////////////////////////////////////////////////////
  
  
-///////////////////write seq
+///////////////////write seq- sequence for writing a data
 class write_data extends uvm_sequence#(transaction);
   `uvm_object_utils(write_data)
   
@@ -96,7 +96,7 @@ class write_data extends uvm_sequence#(transaction);
 endclass
 //////////////////////////////////////////////////////////
  
- 
+ // sequence for reading a data
 class read_data extends uvm_sequence#(transaction);
   `uvm_object_utils(read_data)
   
@@ -121,7 +121,7 @@ class read_data extends uvm_sequence#(transaction);
  
 endclass
 /////////////////////////////////////////////////////////////////////
- 
+ //sequence for perform reset of the dut
 class reset_dut extends uvm_sequence#(transaction);
   `uvm_object_utils(reset_dut)
   
@@ -215,8 +215,8 @@ class driver extends uvm_driver #(transaction);
   task reset_dut(); 
     begin
     vif.rst      <= 1'b1;  ///active high reset
-    vif.miso     <= 1'b0;
-    vif.cs       <= 1'b1;
+    vif.miso     <= 1'b0; // default value
+    vif.cs       <= 1'b1; // default value
    `uvm_info("DRV", "System Reset", UVM_MEDIUM);
     @(posedge vif.clk);
     end
@@ -226,7 +226,7 @@ class driver extends uvm_driver #(transaction);
   task write_d();
   ////start of transaction
   vif.rst  <= 1'b0;
-  vif.cs   <= 1'b0;
+  vif.cs   <= 1'b0;//start of transaction making cs=0
   vif.miso <= 1'b0;
   data     = {tr.din, tr.addr};
   `uvm_info("DRV", $sformatf("DATA WRITE addr : %0d din : %0d",tr.addr, tr.din), UVM_MEDIUM); 
@@ -271,7 +271,7 @@ class driver extends uvm_driver #(transaction);
    @(posedge vif.clk);
    datard[i] = vif.mosi;
    end
-   `uvm_info("DRV", $sformatf("DATA READ addr : %0d dout : %0d",tr.addr,datard), UVM_MEDIUM);  
+   `uvm_info("DRV", $sformatf("DATA READ addr : %0d dout : %0d",tr.addr,datard), UVM_MEDIUM);  // so we will compare the collected data by the monitor
   @(posedge vif.op_done);
   
   endtask 
@@ -346,7 +346,7 @@ logic [7:0] dout;
         
       else begin
         @(posedge vif.clk);
-             if(vif.miso && !vif.cs)
+             if(vif.miso && !vif.cs)	// that's indicate the write transaction
                begin
                        tr.op = writed;
                       @(posedge vif.clk);
@@ -364,7 +364,7 @@ logic [7:0] dout;
                      `uvm_info("MON", $sformatf("DATA WRITE addr:%0d data:%0d",din[7:0],din[15:8]), UVM_NONE); 
                       send.write(tr);
               end
-            else if (!vif.miso && !vif.cs)
+            else if (!vif.miso && !vif.cs) // that's indicate the read transaction
               begin
                              tr.op = readd; 
                              @(posedge vif.clk);
@@ -377,7 +377,7 @@ logic [7:0] dout;
                                tr.addr = din[7:0];
                                
                               @(posedge vif.ready);
-                              
+                              // after ready rising to 1, we are start the collecting of data sended from the memory
                               for(int i = 0; i < 8 ; i++)
                               begin
                               @(posedge vif.clk);
@@ -399,7 +399,7 @@ class sco extends uvm_scoreboard;
 `uvm_component_utils(sco)
  
   uvm_analysis_imp#(transaction,sco) recv;
-  bit [31:0] arr[32] = '{default:0};
+  bit [31:0] arr[32] = '{default:0}; //array storing 32 elements each one 32 bits
   bit [31:0] addr    = 0;
   bit [31:0] data_rd = 0;
  
@@ -428,7 +428,7 @@ class sco extends uvm_scoreboard;
  
     else if (tr.op == readd)
                 begin
-                  data_rd = arr[tr.addr];
+                  data_rd = arr[tr.addr]; // data_rd is the data from the array in the scorboard, tr.dout it is the actual data that dut send in respone to the read operation
                   if (data_rd == tr.dout)
                     `uvm_info("SCO", $sformatf("DATA MATCHED : addr:%0d, rdata:%0d",tr.addr,tr.dout), UVM_NONE)
                          else
@@ -561,6 +561,7 @@ module tb;
     uvm_config_db#(virtual spi_i)::set(null, "*", "vif", vif);
     run_test("test");
    end
-   
+  
+  
 endmodule
  
