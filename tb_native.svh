@@ -554,6 +554,7 @@ virtual task run_phase(uvm_phase phase);
 phase.raise_objection(this);
 `uvm_info("test", ("Starting test..."), UVM_NONE)
 @(negedge(vif.rst));
+`uvm_info("test", ("rst falling to 0..."), UVM_NONE)
 wrrdb.start(e.a.seqr);
  
 phase.drop_objection(this);
