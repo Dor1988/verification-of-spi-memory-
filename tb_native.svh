@@ -322,7 +322,6 @@ class driver extends uvm_driver #(transaction);
 endclass
  
 //////////////////////////////////////////////////////////////////////////////////////////////
- 
 class mon extends uvm_monitor;
 `uvm_component_utils(mon)
  
@@ -347,8 +346,9 @@ logic [7:0] dout;
     
     virtual task run_phase(uvm_phase phase);
     forever begin
-      //@(posedge vif.clk);
       @(posedge vif.clk);
+      @(posedge vif.clk);
+      
       if(vif.rst)
         begin
         tr.op      = rstdut; 
@@ -359,8 +359,7 @@ logic [7:0] dout;
         
       else begin
         @(posedge vif.clk);
-        @(posedge vif.clk);
-             if(vif.miso && !vif.cs)	// that's indicate the write transaction
+             if(vif.miso && !vif.cs)
                begin
                        tr.op = writed;
                       @(posedge vif.clk);
@@ -378,7 +377,7 @@ logic [7:0] dout;
                      `uvm_info("MON", $sformatf("DATA WRITE addr:%0d data:%0d",din[7:0],din[15:8]), UVM_NONE); 
                       send.write(tr);
               end
-            else if (!vif.miso && !vif.cs) // that's indicate the read transaction
+            else if (!vif.miso && !vif.cs)
               begin
                              tr.op = readd; 
                              @(posedge vif.clk);
@@ -391,7 +390,7 @@ logic [7:0] dout;
                                tr.addr = din[7:0];
                                
                               @(posedge vif.ready);
-                              // after ready rising to 1, we are start the collecting of data sended from the memory
+                              
                               for(int i = 0; i < 8 ; i++)
                               begin
                               @(posedge vif.clk);
@@ -555,6 +554,7 @@ phase.raise_objection(this);
 `uvm_info("test", ("Starting test..."), UVM_NONE)
 @(negedge(vif.rst));
 `uvm_info("test", ("rst falling to 0..."), UVM_NONE)
+#40ns;
 wrrdb.start(e.a.seqr);
  
 phase.drop_objection(this);
