@@ -1,6 +1,6 @@
 module spi_mem(
-input clk, rst, cs, miso,
-output reg ready, mosi, op_done
+input clk, rst, cs, mosi,
+output reg ready, miso, op_done
 );
  
 reg [7:0] mem [31:0] = '{default:0};
@@ -17,7 +17,7 @@ begin
           begin
              state <= idle;
              count <= 0;
-             mosi  <= 0;
+             miso  <= 0;
              ready <= 0;
              op_done <= 0;
              
@@ -27,7 +27,7 @@ begin
                 case(state)
                   idle: begin
                     count <= 0;
-                    mosi  <= 0;
+                    miso  <= 0;
                     ready <= 0;
                     op_done <= 0;
                     datain <= 0;
@@ -40,7 +40,7 @@ begin
                   
                     
                   detect: begin 
-                      if(miso)
+                      if(mosi)
                         state <= store; ///write 
                       else
                         state <= send_addr;   ///read
@@ -49,7 +49,7 @@ begin
                     
                    store: begin
                       if(count <= 15) begin
-                        datain[count]     <= miso;
+                        datain[count]     <= mosi;
                         count             <= count + 1;
                         state             <= store;
                       end
@@ -65,7 +65,7 @@ begin
                     send_addr: begin
                       if(count <= 7) begin
                        count <= count + 1;
-                       datain[count] <= miso;
+                       datain[count] <= mosi;
                        state <= send_addr;
                        end
                        else begin
@@ -80,7 +80,7 @@ begin
                      state <= send_data;
                      ready <= 1'b1;
                      count <=  1;
-                     mosi  <= dataout[0];
+                     miso  <= dataout[0];
                     end
                        
                     send_data: begin
@@ -88,7 +88,7 @@ begin
                        if(count <= 7) 
                        begin
                         count <= count + 1;
-                        mosi  <= dataout[count]; 
+                        miso  <= dataout[count]; 
                         state <= send_data;
                        end 
                        else
@@ -105,4 +105,3 @@ begin
           end
       end
 endmodule
- 
