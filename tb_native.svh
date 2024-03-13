@@ -225,9 +225,9 @@ class driver extends uvm_driver #(transaction);
   ///////////////////////write 
   
   task write_d();
-  vif.rst  <= 1'b1;
+  vif.rst  <= 1'b0;
   vif.cs   <= 1'b1;
-  vif.miso <= 1'bx;
+  vif.miso <= 1'b0;
   @(posedge vif.clk);
   ////start of transaction
   vif.rst  <= 1'b0;
@@ -252,9 +252,9 @@ class driver extends uvm_driver #(transaction);
  //////////////////read operation 
   task read_d();
   
-  vif.rst  <= 1'b1;
+  vif.rst  <= 1'b0;
   vif.cs   <= 1'b1;
-  vif.miso <= 1'bx;
+  vif.miso <= 1'b0;
   @(posedge vif.clk);
   ////start of transaction
   vif.rst  <= 1'b0;
@@ -292,6 +292,8 @@ class driver extends uvm_driver #(transaction);
   
  
   virtual task run_phase(uvm_phase phase);
+  //  vif.rst      <= 1'b1;  ///active high reset
+ //   #100ns;
     forever begin
      
          seq_item_port.get_next_item(tr);
@@ -346,7 +348,7 @@ logic [7:0] dout;
     virtual task run_phase(uvm_phase phase);
     forever begin
       @(posedge vif.clk);
-      
+      @(posedge vif.clk);
       if(vif.rst)
         begin
         tr.op      = rstdut; 
@@ -522,7 +524,7 @@ endclass
  
 class test extends uvm_test;
 `uvm_component_utils(test)
- 
+virtual spi_i vif;
 function new(input string inst = "test", uvm_component c);
 super.new(inst,c);
 endfunction
@@ -541,12 +543,16 @@ super.build_phase(phase);
    rdata  = read_data::type_id::create("rdata");
    wrrdb  = writeb_readb::type_id::create("wrrdb");
    rstdut = reset_dut::type_id::create("rstdut");
+   
+   // Retrieve virtual interface handle from the configuration database
+    if (!uvm_config_db#(virtual spi_i)::get(this, "*", "vif", vif))
+    `uvm_fatal("NO_VIF", "Virtual interface not found in the configuration database")
 endfunction
  
 virtual task run_phase(uvm_phase phase);
 phase.raise_objection(this);
-vif.rst<=1'b1;
-vif.cs   <= 1'b1; 
+`uvm_info("test", ("Starting test..."), UVM_NONE)
+@(negedge(vif.rst));
 wrrdb.start(e.a.seqr);
  
 phase.drop_objection(this);
@@ -555,26 +561,38 @@ endclass
  
 //////////////////////////////////////////////////////////////////////
 module tb;
+  // Define interface signals including reset
+  logic reset;
   
-    
-    
+  // Instantiate interface
   spi_i vif();
   
+  // Connect reset signal in the testbench to vif.rst
+  assign vif.rst = reset;
+  
+  // Instantiate DUT
   spi_mem dut (.clk(vif.clk), .rst(vif.rst), .cs(vif.cs), .miso(vif.miso), .ready(vif.ready), .mosi(vif.mosi), .op_done(vif.op_done));
   
+  // Implement reset generation logic
   initial begin
     vif.clk <= 0;
+    
+    // Assert reset
+    reset <= 1'b1;
+    #100ns; // Hold reset for 100 ns
+    // Deassert reset
+    reset <= 1'b0;
   end
- 
+  
+  // Toggle clock
   always #10 vif.clk <= ~vif.clk;
  
-  
-  
+  // Configure virtual interface and run test
   initial begin
+    // Set virtual interface in the configuration database
     uvm_config_db#(virtual spi_i)::set(null, "*", "vif", vif);
+    
+    // Run the test
     run_test("test");
-   end
-  
-  
+  end
 endmodule
- 
