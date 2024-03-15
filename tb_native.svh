@@ -81,10 +81,10 @@ class write_data extends uvm_sequence#(transaction);
   endfunction
   
   virtual task body();
+    tr = transaction::type_id::create("tr");
+    tr.addr_c.constraint_mode(1);
     repeat(15)
       begin
-        tr = transaction::type_id::create("tr");
-        tr.addr_c.constraint_mode(1);
         start_item(tr);
         assert(tr.randomize);
         tr.op = writed;
@@ -107,10 +107,12 @@ class read_data extends uvm_sequence#(transaction);
   endfunction
   
   virtual task body();
+    tr = transaction::type_id::create("tr");
+    tr.addr_c.constraint_mode(1);
     repeat(15)
       begin
-        tr = transaction::type_id::create("tr");
-        tr.addr_c.constraint_mode(1);
+     //   tr = transaction::type_id::create("tr");
+     //   tr.addr_c.constraint_mode(1);
         start_item(tr);
         assert(tr.randomize);
         tr.op = readd;
@@ -132,10 +134,12 @@ class reset_dut extends uvm_sequence#(transaction);
   endfunction
   
   virtual task body();
+	tr = transaction::type_id::create("tr");
+	tr.addr_c.constraint_mode(1);
     repeat(15)
       begin
-        tr = transaction::type_id::create("tr");
-        tr.addr_c.constraint_mode(1);
+        //tr = transaction::type_id::create("tr");
+        //tr.addr_c.constraint_mode(1);
         start_item(tr);
         assert(tr.randomize);
         tr.op = rstdut;
@@ -153,27 +157,33 @@ class writeb_readb extends uvm_sequence#(transaction);
   `uvm_object_utils(writeb_readb)
   
   transaction tr;
+
  
   function new(string name = "writeb_readb");
     super.new(name);
   endfunction
   
   virtual task body();
-     
-    repeat(10)
+
+    tr = transaction::type_id::create("tr");
+    tr.addr_c.constraint_mode(1);
+    repeat(11)
       begin
-        tr = transaction::type_id::create("tr");
-        tr.addr_c.constraint_mode(1);
+        //tr = transaction::type_id::create("tr");
+        //tr.addr_c.constraint_mode(1);
         start_item(tr);
         assert(tr.randomize);
         tr.op = writed;
         finish_item(tr);  
       end
+	  
+	tr = transaction::type_id::create("tr");
+    tr.addr_c.constraint_mode(1);
         
-    repeat(10)
+    repeat(11)
       begin
-        tr = transaction::type_id::create("tr");
-        tr.addr_c.constraint_mode(1);
+        //tr = transaction::type_id::create("tr");
+        //tr.addr_c.constraint_mode(1);
         start_item(tr);
         assert(tr.randomize);
         tr.op = readd;
@@ -550,6 +560,11 @@ super.build_phase(phase);
 endfunction
  
 virtual task run_phase(uvm_phase phase);
+// Seed the random number generator
+//int seed = $time;
+//$random(seed);
+// Print the seed value for reference
+//`uvm_info(get_type_name(), $sformatf("Random seed: %0d", seed), UVM_MEDIUM)
 phase.raise_objection(this);
 `uvm_info("test", ("Starting test..."), UVM_NONE)
 @(negedge(vif.rst));
