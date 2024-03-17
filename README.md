@@ -36,4 +36,38 @@ This project serves as a comprehensive verification environment for validating t
 3. reset_dut: this sequence generates transactions intended to perform a reset operation on the DUT.
 4. writeb_readb: this sequence generates a total of 22 transactions, alternating between write and read operations, with 11 transactions of each type. Each transaction is randomly generated based on the constraints defined in the transaction class.
 
+
+
+
+
+
+
+
+### scoreboard:
+
+The scoreboard (sco) is checking the correctness of data transactions between the DUT (Device Under Test- spi_mem) and the testbench. Here's a summary of what the scoreboard is checking for each type of transaction:
+
+1. System Reset Detection:
+
+When the scoreboard receives a transaction with the operation type rstdut, it recognizes this as a system reset operation.
+The scoreboard logs a message indicating the detection of a system reset.
+
+2. Write Operation (writed):
+
+When the scoreboard receives a transaction with the operation type writed, it interprets this as a write operation.
+It stores the data (tr.din) received in the transaction into the appropriate location in the scoreboard array (arr) based on the address (tr.addr).
+Additionally, it logs a message indicating the data write operation and the data stored in the scoreboard array for debugging purposes.
+
+3.Read Operation (readd):
+
+When the scoreboard receives a transaction with the operation type readd, it interprets this as a read operation.
+It retrieves the data stored in the scoreboard array (arr) at the specified address (tr.addr).
+The scoreboard compares the retrieved data (data_rd) with the actual data (tr.dout) received from the DUT.
+If the retrieved data matches the actual data, it logs a message indicating a successful data match.
+If the retrieved data does not match the actual data, it logs a message indicating a test failure along with the actual and retrieved data for debugging.
+
+Overall, the scoreboard checks the following:
+It ensures that write operations correctly store data in the DUT (spi_mem).
+It verifies that read operations received the right data from DUT (spi_mem), matching the data retrieved from the scorboard array. If there is a discrepancy, it flags a test failure for further investigation.
+
    
