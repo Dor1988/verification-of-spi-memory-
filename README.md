@@ -62,6 +62,17 @@ It constructs the address to be read (data) from the transaction (tr) and drives
 After waiting for the DUT to indicate readiness (vif.ready), it samples the output data (vif.miso) and stores it in datard.
 A message is displayed indicating the read operation and the retrieved data.
 
+### monitor:
++Run Phase:
+The run_phase task continuously monitors transactions on the SPI bus.
+It waits for positive clock edges (posedge vif.clk) to synchronize with the clock signal.
+If a system reset (vif.rst) is detected, it creates a reset transaction (rstdut) and sends it through the analysis port (send).
+If a write transaction (vif.mosi && !vif.cs) is detected, it collects the address and data being written and sends the transaction through the analysis port.
+If a read transaction (!vif.mosi && !vif.cs) is detected, it collects the address being read, waits for the ready signal (vif.ready), collects the data sent from the memory (vif.miso), and sends the transaction through the analysis port.
+
++Transaction Processing:
+The collected data (address and data) is stored in the tr transaction object.
+Information about the monitored transactions, such as the address and data, is displayed using uvm_info messages.
 
 ### scoreboard:
 
