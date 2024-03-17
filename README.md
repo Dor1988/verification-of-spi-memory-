@@ -36,11 +36,29 @@ This project serves as a comprehensive verification environment for validating t
 3. reset_dut: this sequence generates transactions intended to perform a reset operation on the DUT.
 4. writeb_readb: this sequence generates a total of 22 transactions, alternating between write and read operations, with 11 transactions of each type. Each transaction is randomly generated based on the constraints defined in the transaction class.
 
+### driver:
++this driver component is responsible for the execution of transactions based on commands received from the testbench, driving these transactions to the DUT, and handling the necessary signaling for both write and read operations.
 
+1.Reset Task (reset_dut):
 
+This task is responsible for performing a system reset on the DUT.
+It sets the reset signal (vif.rst) to high, waits for a clock edge, and then sets it back to low.
+A message is displayed indicating the system reset.
 
+2.Write Task (write_d):
 
+This task is responsible for driving write transactions to the DUT.
+It configures the virtual interface signals (vif) appropriately for a write operation.
+It constructs the data to be written (data) from the transaction (tr) and drives it to the DUT.
+The task waits for the operation to complete (vif.op_done).
 
+3.Read Task (read_d):
+
+This task is responsible for driving read transactions to the DUT.
+It configures the virtual interface signals (vif) appropriately for a read operation.
+It constructs the address to be read (data) from the transaction (tr) and drives it to the DUT.
+After waiting for the DUT to indicate readiness (vif.ready), it samples the output data (vif.miso) and stores it in datard.
+A message is displayed indicating the read operation and the retrieved data.
 
 
 ### scoreboard:
