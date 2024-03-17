@@ -18,7 +18,7 @@ This repository contains a UVM verification environment designed to verify a Ser
   + sequencer class: generates data transactions as class objects and sends it to the driver for execution.
   + Driver Class: Drives transactions to the DUT.
   + Monitor Class: Monitors the DUT's output and captures the response for verification.
-  + Agent Class: An agent encapsulates a sequencer, driver and monitor into a single entity by instantiating and connecting the conponents together via tlm interfaces.
+  + Agent Class: An agent encapsulates a sequencer, driver and monitor into a single entity by instantiating and connecting the components together via tlm interfaces.
   + Scoreboard Class: Compares the expected and actual outputs for verification.
   + Environment Class: contain the testbench components.
     
