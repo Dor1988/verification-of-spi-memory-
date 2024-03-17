@@ -33,10 +33,10 @@ This project serves as a comprehensive verification environment for validating t
 ## More details about the environment:
 
 ### sequences:
-1. write_data: this sequence generates a 15 write transactions, where each transaction is randomly generated based on the constraints defined in the transaction class.
-2. read_data: this sequence generates a 15 read transactions, where each transaction is randomly generated based on the constraints defined in the transaction class.
+1. write_data: this sequence generates a write transaction, where each transaction is randomly generated based on the constraints defined in the transaction class.
+2. read_data: this sequence generates a read transactions, where each transaction is randomly generated based on the constraints defined in the transaction class.
 3. reset_dut: this sequence generates transactions intended to perform a reset operation on the DUT.
-4. writeb_readb: this sequence generates a total of 22 transactions, alternating between write and read operations, with 11 transactions of each type. Each transaction is randomly generated based on the constraints defined in the transaction class.
+4. writeb_readb: this sequence generates a total of 64 transactions, alternating between write and read operations, with 32 transactions of each type. Each transaction is randomly generated based on the constraints defined in the transaction class.
 
 ### driver:
 +this driver component is responsible for the execution of transactions based on commands received from the testbench, driving these transactions to the DUT, and handling the necessary signaling for both write and read operations.
