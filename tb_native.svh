@@ -43,7 +43,7 @@ class transaction extends uvm_sequence_item;
          logic ready;
          logic miso;
          
-  constraint addr_c { addr <= 10;}
+  constraint addr_c { addr <= 31;}
  
         `uvm_object_utils_begin(transaction)
         `uvm_field_int (addr,UVM_ALL_ON)
@@ -83,7 +83,7 @@ class write_data extends uvm_sequence#(transaction);
   virtual task body();
     tr = transaction::type_id::create("tr");
     tr.addr_c.constraint_mode(1);
-    repeat(15)
+    repeat(1)
       begin
         start_item(tr);
         assert(tr.randomize);
@@ -109,7 +109,7 @@ class read_data extends uvm_sequence#(transaction);
   virtual task body();
     tr = transaction::type_id::create("tr");
     tr.addr_c.constraint_mode(1);
-    repeat(15)
+    repeat(1)
       begin
      //   tr = transaction::type_id::create("tr");
      //   tr.addr_c.constraint_mode(1);
@@ -136,7 +136,7 @@ class reset_dut extends uvm_sequence#(transaction);
   virtual task body();
 	tr = transaction::type_id::create("tr");
 	tr.addr_c.constraint_mode(1);
-    repeat(15)
+    repeat(1)
       begin
         //tr = transaction::type_id::create("tr");
         //tr.addr_c.constraint_mode(1);
@@ -167,7 +167,7 @@ class writeb_readb extends uvm_sequence#(transaction);
 
     tr = transaction::type_id::create("tr");
     tr.addr_c.constraint_mode(1);
-    repeat(11)
+    repeat(32)
       begin
         //tr = transaction::type_id::create("tr");
         //tr.addr_c.constraint_mode(1);
@@ -180,7 +180,7 @@ class writeb_readb extends uvm_sequence#(transaction);
 	tr = transaction::type_id::create("tr");
     tr.addr_c.constraint_mode(1);
         
-    repeat(11)
+    repeat(32)
       begin
         //tr = transaction::type_id::create("tr");
         //tr.addr_c.constraint_mode(1);
