@@ -58,7 +58,7 @@ When the scoreboard receives a transaction with the operation type writed, it in
 It stores the data (tr.din) received in the transaction into the appropriate location in the scoreboard array (arr) based on the address (tr.addr).
 Additionally, it logs a message indicating the data write operation and the data stored in the scoreboard array for debugging purposes.
 
-3.Read Operation (readd):
+3. Read Operation (readd):
 
 When the scoreboard receives a transaction with the operation type readd, it interprets this as a read operation.
 It retrieves the data stored in the scoreboard array (arr) at the specified address (tr.addr).
