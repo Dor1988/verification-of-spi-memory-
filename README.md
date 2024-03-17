@@ -13,8 +13,9 @@ This repository contains a UVM verification environment designed to verify a Ser
     
 ### 2.Testbench Components::
   + Transaction Class: Defines the transaction format for SPI communication.
-  + sequence Class: Generates transactions and send them to the sequencer.
-  + sequencer class: send the transactions to the driver for execution.
+  + sequence Class: uvm sequences are made up of several data items, which can be put together in different ways to create interesting scenarios.
+    they are executed by an assigned sequencer which then sends data items to the driver. Hence, sequences make up the core stimuli of any verifictaion plan.
+  + sequencer class: generates data transactions as class objects and sends it to the driver for execution.
   + Driver Class: Drives transactions to the DUT.
   + Monitor Class: Monitors the DUT's output and captures the response for verification.
   + Scoreboard Class: Compares the expected and actual outputs for verification.
