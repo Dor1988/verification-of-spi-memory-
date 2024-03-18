@@ -1,0 +1,367 @@
+{\rtf1}
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/dorbe/native_spi/native_spi.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/dorbe/native_spi/native_spi.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_vlog.prj"
+ECHO is off.
+ECHO is off.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/dorbe/native_spi/native_spi.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log -L uvm"
+ECHO is off.
+ECHO is off.
+Vivado Simulator v2023.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log -L uvm 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 4031.867 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/dorbe/native_spi/native_spi.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -view {C:/Users/dorbe/native_spi/tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config C:/Users/dorbe/native_spi/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+UVM_INFO C:/Xilinx/Vivado/2023.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO C:/Xilinx/Vivado/2023.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(569) @ 0: uvm_test_top [test] Starting test...
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(365) @ 30000: uvm_test_top.env.a.m [MON] SYSTEM RESET DETECTED
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(444) @ 30000: uvm_test_top.env.s [SCO] SYSTEM RESET DETECTED
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(365) @ 70000: uvm_test_top.env.a.m [MON] SYSTEM RESET DETECTED
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(444) @ 70000: uvm_test_top.env.s [SCO] SYSTEM RESET DETECTED
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(571) @ 100000: uvm_test_top [test] rst falling to 0...
+Stopped at time : 140 ns : File "C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv" Line 319
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 4031.867 ; gain = 0.000
+remove_bps -file {C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv} -line 319
+remove_bps -file {C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv} -line 326
+run all
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 150000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 23 din : 90
+Stopped at time : 510 ns : File "C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv" Line 258
+remove_bps -file {C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv} -line 258
+run all
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 530000: uvm_test_top.env.a.m [MON] DATA WRITE addr:23 data:90
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 530000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:23, wdata:90 arr_wr:90
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 550000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 15 din : 45
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 930000: uvm_test_top.env.a.m [MON] DATA WRITE addr:15 data:45
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 930000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:15, wdata:45 arr_wr:45
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 950000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 29 din : 255
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 1330000: uvm_test_top.env.a.m [MON] DATA WRITE addr:29 data:255
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 1330000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:29, wdata:255 arr_wr:255
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 1350000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 25 din : 145
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 1730000: uvm_test_top.env.a.m [MON] DATA WRITE addr:25 data:145
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 1730000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:25, wdata:145 arr_wr:145
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 1750000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 28 din : 12
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 2130000: uvm_test_top.env.a.m [MON] DATA WRITE addr:28 data:12
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 2130000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:28, wdata:12 arr_wr:12
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 2150000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 12 din : 105
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 2530000: uvm_test_top.env.a.m [MON] DATA WRITE addr:12 data:105
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 2530000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:12, wdata:105 arr_wr:105
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 2550000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 10 din : 203
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 2930000: uvm_test_top.env.a.m [MON] DATA WRITE addr:10 data:203
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 2930000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:10, wdata:203 arr_wr:203
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 2950000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 18 din : 203
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 3330000: uvm_test_top.env.a.m [MON] DATA WRITE addr:18 data:203
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 3330000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:18, wdata:203 arr_wr:203
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 3350000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 13 din : 218
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 3730000: uvm_test_top.env.a.m [MON] DATA WRITE addr:13 data:218
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 3730000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:13, wdata:218 arr_wr:218
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 3750000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 6 din : 209
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 4130000: uvm_test_top.env.a.m [MON] DATA WRITE addr:6 data:209
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 4130000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:6, wdata:209 arr_wr:209
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 4150000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 27 din : 131
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 4530000: uvm_test_top.env.a.m [MON] DATA WRITE addr:27 data:131
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 4530000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:27, wdata:131 arr_wr:131
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 4550000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 22 din : 66
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 4930000: uvm_test_top.env.a.m [MON] DATA WRITE addr:22 data:66
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 4930000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:22, wdata:66 arr_wr:66
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 4950000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 26 din : 172
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 5330000: uvm_test_top.env.a.m [MON] DATA WRITE addr:26 data:172
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 5330000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:26, wdata:172 arr_wr:172
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 5350000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 11 din : 9
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 5730000: uvm_test_top.env.a.m [MON] DATA WRITE addr:11 data:9
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 5730000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:11, wdata:9 arr_wr:9
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 5750000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 2 din : 79
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 6130000: uvm_test_top.env.a.m [MON] DATA WRITE addr:2 data:79
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 6130000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:2, wdata:79 arr_wr:79
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 6150000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 3 din : 75
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 6530000: uvm_test_top.env.a.m [MON] DATA WRITE addr:3 data:75
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 6530000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:3, wdata:75 arr_wr:75
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 6550000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 30 din : 106
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 6930000: uvm_test_top.env.a.m [MON] DATA WRITE addr:30 data:106
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 6930000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:30, wdata:106 arr_wr:106
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 6950000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 24 din : 112
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 7330000: uvm_test_top.env.a.m [MON] DATA WRITE addr:24 data:112
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 7330000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:24, wdata:112 arr_wr:112
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 7350000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 5 din : 60
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 7730000: uvm_test_top.env.a.m [MON] DATA WRITE addr:5 data:60
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 7730000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:5, wdata:60 arr_wr:60
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 7750000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 20 din : 229
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 8130000: uvm_test_top.env.a.m [MON] DATA WRITE addr:20 data:229
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 8130000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:20, wdata:229 arr_wr:229
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 8150000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 8 din : 72
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 8530000: uvm_test_top.env.a.m [MON] DATA WRITE addr:8 data:72
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 8530000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:8, wdata:72 arr_wr:72
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 8550000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 7 din : 190
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 8930000: uvm_test_top.env.a.m [MON] DATA WRITE addr:7 data:190
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 8930000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:7, wdata:190 arr_wr:190
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 8950000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 21 din : 10
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 9330000: uvm_test_top.env.a.m [MON] DATA WRITE addr:21 data:10
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 9330000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:21, wdata:10 arr_wr:10
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 9350000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 16 din : 53
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 9730000: uvm_test_top.env.a.m [MON] DATA WRITE addr:16 data:53
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 9730000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:16, wdata:53 arr_wr:53
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 9750000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 4 din : 37
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 10130000: uvm_test_top.env.a.m [MON] DATA WRITE addr:4 data:37
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 10130000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:4, wdata:37 arr_wr:37
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 10150000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 0 din : 254
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 10530000: uvm_test_top.env.a.m [MON] DATA WRITE addr:0 data:254
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 10530000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:0, wdata:254 arr_wr:254
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 10550000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 9 din : 214
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 10930000: uvm_test_top.env.a.m [MON] DATA WRITE addr:9 data:214
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 10930000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:9, wdata:214 arr_wr:214
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 10950000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 19 din : 119
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 11330000: uvm_test_top.env.a.m [MON] DATA WRITE addr:19 data:119
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 11330000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:19, wdata:119 arr_wr:119
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 11350000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 31 din : 14
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 11730000: uvm_test_top.env.a.m [MON] DATA WRITE addr:31 data:14
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 11730000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:31, wdata:14 arr_wr:14
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 11750000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 14 din : 103
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 12130000: uvm_test_top.env.a.m [MON] DATA WRITE addr:14 data:103
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 12130000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:14, wdata:103 arr_wr:103
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 12150000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 1 din : 207
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 12530000: uvm_test_top.env.a.m [MON] DATA WRITE addr:1 data:207
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 12530000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:1, wdata:207 arr_wr:207
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(247) @ 12550000: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 17 din : 234
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(387) @ 12930000: uvm_test_top.env.a.m [MON] DATA WRITE addr:17 data:234
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(449) @ 12930000: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:17, wdata:234 arr_wr:234
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 13350000: uvm_test_top.env.a.d [DRV] DATA READ addr : 13 dout : 218
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 13350000: uvm_test_top.env.a.m [MON] DATA READ addr:13 data:218 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 13350000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:13, rdata:218
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 13770000: uvm_test_top.env.a.d [DRV] DATA READ addr : 15 dout : 45
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 13770000: uvm_test_top.env.a.m [MON] DATA READ addr:15 data:45 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 13770000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:15, rdata:45
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 14190000: uvm_test_top.env.a.d [DRV] DATA READ addr : 21 dout : 10
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 14190000: uvm_test_top.env.a.m [MON] DATA READ addr:21 data:10 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 14190000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:21, rdata:10
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 14610000: uvm_test_top.env.a.d [DRV] DATA READ addr : 16 dout : 53
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 14610000: uvm_test_top.env.a.m [MON] DATA READ addr:16 data:53 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 14610000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:16, rdata:53
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 15030000: uvm_test_top.env.a.d [DRV] DATA READ addr : 27 dout : 131
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 15030000: uvm_test_top.env.a.m [MON] DATA READ addr:27 data:131 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 15030000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:27, rdata:131
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 15450000: uvm_test_top.env.a.d [DRV] DATA READ addr : 28 dout : 12
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 15450000: uvm_test_top.env.a.m [MON] DATA READ addr:28 data:12 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 15450000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:28, rdata:12
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 15870000: uvm_test_top.env.a.d [DRV] DATA READ addr : 20 dout : 229
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 15870000: uvm_test_top.env.a.m [MON] DATA READ addr:20 data:229 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 15870000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:20, rdata:229
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 16290000: uvm_test_top.env.a.d [DRV] DATA READ addr : 8 dout : 72
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 16290000: uvm_test_top.env.a.m [MON] DATA READ addr:8 data:72 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 16290000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:8, rdata:72
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 16710000: uvm_test_top.env.a.d [DRV] DATA READ addr : 1 dout : 207
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 16710000: uvm_test_top.env.a.m [MON] DATA READ addr:1 data:207 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 16710000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:1, rdata:207
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 17130000: uvm_test_top.env.a.d [DRV] DATA READ addr : 29 dout : 255
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 17130000: uvm_test_top.env.a.m [MON] DATA READ addr:29 data:255 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 17130000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:29, rdata:255
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 17550000: uvm_test_top.env.a.d [DRV] DATA READ addr : 2 dout : 79
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 17550000: uvm_test_top.env.a.m [MON] DATA READ addr:2 data:79 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 17550000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:2, rdata:79
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 17970000: uvm_test_top.env.a.d [DRV] DATA READ addr : 30 dout : 106
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 17970000: uvm_test_top.env.a.m [MON] DATA READ addr:30 data:106 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 17970000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:30, rdata:106
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 18390000: uvm_test_top.env.a.d [DRV] DATA READ addr : 25 dout : 145
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 18390000: uvm_test_top.env.a.m [MON] DATA READ addr:25 data:145 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 18390000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:25, rdata:145
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 18810000: uvm_test_top.env.a.d [DRV] DATA READ addr : 19 dout : 119
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 18810000: uvm_test_top.env.a.m [MON] DATA READ addr:19 data:119 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 18810000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:19, rdata:119
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 19230000: uvm_test_top.env.a.d [DRV] DATA READ addr : 22 dout : 66
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 19230000: uvm_test_top.env.a.m [MON] DATA READ addr:22 data:66 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 19230000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:22, rdata:66
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 19650000: uvm_test_top.env.a.d [DRV] DATA READ addr : 7 dout : 190
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 19650000: uvm_test_top.env.a.m [MON] DATA READ addr:7 data:190 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 19650000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:7, rdata:190
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 20070000: uvm_test_top.env.a.d [DRV] DATA READ addr : 11 dout : 9
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 20070000: uvm_test_top.env.a.m [MON] DATA READ addr:11 data:9 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 20070000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:11, rdata:9
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 20490000: uvm_test_top.env.a.d [DRV] DATA READ addr : 0 dout : 254
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 20490000: uvm_test_top.env.a.m [MON] DATA READ addr:0 data:254 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 20490000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:0, rdata:254
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 20910000: uvm_test_top.env.a.d [DRV] DATA READ addr : 12 dout : 105
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 20910000: uvm_test_top.env.a.m [MON] DATA READ addr:12 data:105 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 20910000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:12, rdata:105
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 21330000: uvm_test_top.env.a.d [DRV] DATA READ addr : 10 dout : 203
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 21330000: uvm_test_top.env.a.m [MON] DATA READ addr:10 data:203 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 21330000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:10, rdata:203
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 21750000: uvm_test_top.env.a.d [DRV] DATA READ addr : 6 dout : 209
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 21750000: uvm_test_top.env.a.m [MON] DATA READ addr:6 data:209 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 21750000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:6, rdata:209
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 22170000: uvm_test_top.env.a.d [DRV] DATA READ addr : 3 dout : 75
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 22170000: uvm_test_top.env.a.m [MON] DATA READ addr:3 data:75 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 22170000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:3, rdata:75
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 22590000: uvm_test_top.env.a.d [DRV] DATA READ addr : 24 dout : 112
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 22590000: uvm_test_top.env.a.m [MON] DATA READ addr:24 data:112 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 22590000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:24, rdata:112
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 23010000: uvm_test_top.env.a.d [DRV] DATA READ addr : 14 dout : 103
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 23010000: uvm_test_top.env.a.m [MON] DATA READ addr:14 data:103 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 23010000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:14, rdata:103
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 23430000: uvm_test_top.env.a.d [DRV] DATA READ addr : 9 dout : 214
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 23430000: uvm_test_top.env.a.m [MON] DATA READ addr:9 data:214 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 23430000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:9, rdata:214
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 23850000: uvm_test_top.env.a.d [DRV] DATA READ addr : 26 dout : 172
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 23850000: uvm_test_top.env.a.m [MON] DATA READ addr:26 data:172 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 23850000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:26, rdata:172
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 24270000: uvm_test_top.env.a.d [DRV] DATA READ addr : 5 dout : 60
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 24270000: uvm_test_top.env.a.m [MON] DATA READ addr:5 data:60 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 24270000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:5, rdata:60
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 24690000: uvm_test_top.env.a.d [DRV] DATA READ addr : 17 dout : 234
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 24690000: uvm_test_top.env.a.m [MON] DATA READ addr:17 data:234 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 24690000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:17, rdata:234
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 25110000: uvm_test_top.env.a.d [DRV] DATA READ addr : 4 dout : 37
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 25110000: uvm_test_top.env.a.m [MON] DATA READ addr:4 data:37 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 25110000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:4, rdata:37
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 25530000: uvm_test_top.env.a.d [DRV] DATA READ addr : 23 dout : 90
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 25530000: uvm_test_top.env.a.m [MON] DATA READ addr:23 data:90 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 25530000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:23, rdata:90
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 25950000: uvm_test_top.env.a.d [DRV] DATA READ addr : 18 dout : 203
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 25950000: uvm_test_top.env.a.m [MON] DATA READ addr:18 data:203 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 25950000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:18, rdata:203
+----------------------------------------------------------------
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(294) @ 26370000: uvm_test_top.env.a.d [DRV] DATA READ addr : 31 dout : 14
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(411) @ 26370000: uvm_test_top.env.a.m [MON] DATA READ addr:31 data:14 
+UVM_INFO C:/Users/dorbe/native_spi/native_spi.srcs/sim_1/new/tb.sv(456) @ 26370000: uvm_test_top.env.s [SCO] DATA MATCHED : addr:31, rdata:14
+----------------------------------------------------------------
+UVM_INFO C:/Xilinx/Vivado/2023.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 26370000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO C:/Xilinx/Vivado/2023.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 26370000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  202
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[DRV]    64
+[MON]    66
+[RNTST]     1
+[SCO]    66
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+[test]     2
+
+$finish called at time : 26370 ns : File "C:/Xilinx/Vivado/2023.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
