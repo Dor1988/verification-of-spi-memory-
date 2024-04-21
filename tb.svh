@@ -6,8 +6,8 @@
  
 interface spi_i;
  
-    logic clk, rst, cs, miso; // notice that miso it is the line that the data goes from the driver into the memory
-    logic ready, mosi, op_done; // notice that mosi it is the line that the data goes from the memory outside of it 
+    logic clk, rst, cs, miso; 
+    logic ready, mosi, op_done; 
       
 endinterface 
  
@@ -31,9 +31,9 @@ typedef enum bit [1:0]   {readd = 0, writed = 1, rstdut = 2} oper_mode; // for v
  
  
 class transaction extends uvm_sequence_item;
-    randc logic [7:0] addr;// not exist at the dut, just for work convenience with transactions
-    rand logic [7:0] din;// not exist at the dut, just for work convenience with transactions
-         logic [7:0] dout;// not exist at the dut, just for work convenience with transactions
+    randc logic [7:0] addr;// not exist at the dut, 
+    rand logic [7:0] din;// not exist at the dut, 
+         logic [7:0] dout;// not exist at the dut,
     rand oper_mode   op;
          logic rst;
     rand logic mosi;
@@ -256,6 +256,7 @@ class driver extends uvm_driver #(transaction);
    end
   
   @(posedge vif.op_done);
+  vif.cs   <= 1'b1; // the end  of transaction
   
   endtask 
   
@@ -293,7 +294,7 @@ class driver extends uvm_driver #(transaction);
    end
    `uvm_info("DRV", $sformatf("DATA READ addr : %0d dout : %0d",tr.addr,datard), UVM_MEDIUM);  // so we will compare the collected data by the monitor
   @(posedge vif.op_done);
-  //vif.cs   <= 1'b1; // the end  of transaction
+  vif.cs   <= 1'b1; // the end  of transaction
   
   endtask 
   
@@ -341,9 +342,59 @@ transaction tr;
 virtual spi_i vif;
 logic [15:0] din;
 logic [7:0] dout;
+
+
+///////////adding coverage
+  
+  covergroup c ;
+    option.per_instance = 1;
+	
+	    coverpoint tr.op {
+
+    }
+	
+	
+	 coverpoint tr.rst {
+      bins ld_low = {0};
+      bins ld_high = {1};
+    }
+	
+	
+	
+      coverpoint tr.addr {
+        bins range[] = {[0:31]};
+        bins other = {[32:255]};
+    }
+	
+	  coverpoint tr.din {
+      bins lower = {[0:84]};
+      bins mid = {[85:169]};
+      bins high = {[170:255]};
+    }
+
+      coverpoint tr.dout {
+      bins lower = {[0:84]};
+      bins mid = {[85:169]};
+      bins high = {[170:255]};
+    }
+    
+    
+    cross_write_operation_addr_din : cross tr.addr,tr.din,tr.op
+    {
+      ignore_bins unused_ld = binsof(tr.op) intersect {0,2}; 
+    }
+    
+    cross_read_operation_addr_dout : cross tr.addr,tr.dout,tr.op
+    {
+      ignore_bins unused_ld = binsof(tr.op) intersect {1,2};
+    }
+    
+    
+  endgroup
  
     function new(input string inst = "mon", uvm_component parent = null);
     super.new(inst,parent);
+	c = new();
     endfunction
     
     virtual function void build_phase(uvm_phase phase);
@@ -362,6 +413,7 @@ logic [7:0] dout;
       if(vif.rst)
         begin
         tr.op      = rstdut; 
+		c.sample();
         `uvm_info("MON", "SYSTEM RESET DETECTED", UVM_NONE);
         send.write(tr);
         end
@@ -384,6 +436,7 @@ logic [7:0] dout;
                        tr.din  = din[15:8];
                        
                       @(posedge vif.op_done);
+					  c.sample();
                      `uvm_info("MON", $sformatf("DATA WRITE addr:%0d data:%0d",din[7:0],din[15:8]), UVM_NONE); 
                       send.write(tr);
               end
@@ -408,6 +461,7 @@ logic [7:0] dout;
                               end
                                @(posedge vif.op_done);
                               tr.dout = dout;  
+							  c.sample();
                              `uvm_info("MON", $sformatf("DATA READ addr:%0d data:%0d ",tr.addr,tr.dout), UVM_NONE); 
                              send.write(tr);
            end      
@@ -612,4 +666,10 @@ module tb;
     // Run the test
     run_test("test");
   end
+  
+  initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars;
+  end
+ 
 endmodule
