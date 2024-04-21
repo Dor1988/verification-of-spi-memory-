@@ -1,0 +1,752 @@
+[2024-04-18 14:38:13 UTC] vlib work && vlog '-timescale' '1ns/1ns' +incdir+$RIVIERA_HOME/vlib/uvm-1.2/src -l uvm_1_2 -err VCP2947 W9 -err VCP2974 W9 -err VCP3003 W9 -err VCP5417 W9 -err VCP6120 W9 -err VCP7862 W9 -err VCP2129 W9 design.sv testbench.sv  && vsim -c -do run.do 
+VSIMSA: Configuration file changed: `/home/runner/library.cfg'
+ALIB: Library "work" attached.
+work = /home/runner/work/work.lib
+MESSAGE "Pass 1. Scanning modules hierarchy."
+MESSAGE_SP VCP2124 "Package uvm_pkg found in library uvm_1_2."
+MESSAGE "Pass 2. Processing instantiations."
+MESSAGE "Pass 3. Processing behavioral statements."
+MESSAGE "Running Assertions Compiler."
+MESSAGE "Running Optimizer."
+MESSAGE "ELB/DAG code generating."
+MESSAGE "Unit top modules: tb."
+MESSAGE "$root top modules: tb."
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time: 5[s]."
+ALOG: Warning: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+done
+# Aldec, Inc. Riviera-PRO version 2022.04.117.8517 built for Linux64 on May 04, 2022.
+# HDL, SystemC, and Assertions simulator, debugger, and design environment.
+# (c) 1999-2022 Aldec, Inc. All rights reserved.
+vsim +access+r;
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 Package 'uvm_pkg' does not have a `timescale directive, but previous modules do.
+# ELBREAD: Elaboration time 0.5 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library '/usr/share/Riviera-PRO/bin/libsystf.so'
+# ELAB2: Create instances ...
+# KERNEL: Info: Loading library:  /usr/share/Riviera-PRO/bin/uvm_1_2_dpi
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.1 [s]
+# SLP: 0 primitives and 5 (33.33%) other processes in SLP
+# SLP: 23 (0.07%) signals in SLP and 19 (0.06%) interface signals
+# ELAB2: Elaboration final pass complete - time: 2.7 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Riviera-PRO EDU Edition. The performance of simulation is reduced.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 30281 kB (elbread=2106 elab2=23159 kernel=5016 sdf=0)
+# KERNEL: UVM_INFO /home/build/vlib1/vlib/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM-1.2
+# KERNEL: (C) 2007-2014 Mentor Graphics Corporation
+# KERNEL: (C) 2007-2014 Cadence Design Systems, Inc.
+# KERNEL: (C) 2006-2014 Synopsys, Inc.
+# KERNEL: (C) 2011-2013 Cypress Semiconductor Corp.
+# KERNEL: (C) 2013-2014 NVIDIA Corporation
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: 
+# KERNEL:   ***********       IMPORTANT RELEASE NOTES         ************
+# KERNEL: 
+# KERNEL:   You are using a version of the UVM library that has been compiled
+# KERNEL:   with `UVM_NO_DEPRECATED undefined.
+# KERNEL:   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# KERNEL: 
+# KERNEL:   You are using a version of the UVM library that has been compiled
+# KERNEL:   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+# KERNEL:   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# KERNEL: 
+# KERNEL:       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# KERNEL: 
+# KERNEL: ASDB file was created in location /home/runner/dataset.asdb
+run -all;
+# KERNEL: UVM_INFO @ 0: reporter [RNTST] Running test test...
+# KERNEL: UVM_INFO /home/runner/testbench.sv(623) @ 0: uvm_test_top [test] Starting test...
+# KERNEL: UVM_INFO /home/runner/testbench.sv(417) @ 30: uvm_test_top.env.a.m [MON] SYSTEM RESET DETECTED
+# KERNEL: UVM_INFO /home/runner/testbench.sv(498) @ 30: uvm_test_top.env.s [SCO] SYSTEM RESET DETECTED
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(417) @ 70: uvm_test_top.env.a.m [MON] SYSTEM RESET DETECTED
+# KERNEL: UVM_INFO /home/runner/testbench.sv(498) @ 70: uvm_test_top.env.s [SCO] SYSTEM RESET DETECTED
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(625) @ 100: uvm_test_top [test] rst falling to 0...
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 150: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 8 din : 80
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 530: uvm_test_top.env.a.m [MON] DATA WRITE addr:8 data:80
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 530: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:8, wdata:80 arr_wr:80
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 550: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 25 din : 5
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 930: uvm_test_top.env.a.m [MON] DATA WRITE addr:25 data:5
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 930: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:25, wdata:5 arr_wr:5
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 950: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 23 din : 111
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 1330: uvm_test_top.env.a.m [MON] DATA WRITE addr:23 data:111
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 1330: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:23, wdata:111 arr_wr:111
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 1350: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 16 din : 217
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 1730: uvm_test_top.env.a.m [MON] DATA WRITE addr:16 data:217
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 1730: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:16, wdata:217 arr_wr:217
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 1750: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 11 din : 29
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 2130: uvm_test_top.env.a.m [MON] DATA WRITE addr:11 data:29
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 2130: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:11, wdata:29 arr_wr:29
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 2150: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 12 din : 114
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 2530: uvm_test_top.env.a.m [MON] DATA WRITE addr:12 data:114
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 2530: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:12, wdata:114 arr_wr:114
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 2550: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 5 din : 216
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 2930: uvm_test_top.env.a.m [MON] DATA WRITE addr:5 data:216
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 2930: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:5, wdata:216 arr_wr:216
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 2950: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 24 din : 79
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 3330: uvm_test_top.env.a.m [MON] DATA WRITE addr:24 data:79
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 3330: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:24, wdata:79 arr_wr:79
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 3350: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 4 din : 215
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 3730: uvm_test_top.env.a.m [MON] DATA WRITE addr:4 data:215
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 3730: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:4, wdata:215 arr_wr:215
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 3750: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 20 din : 112
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 4130: uvm_test_top.env.a.m [MON] DATA WRITE addr:20 data:112
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 4130: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:20, wdata:112 arr_wr:112
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 4150: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 30 din : 51
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 4530: uvm_test_top.env.a.m [MON] DATA WRITE addr:30 data:51
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 4530: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:30, wdata:51 arr_wr:51
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 4550: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 28 din : 213
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 4930: uvm_test_top.env.a.m [MON] DATA WRITE addr:28 data:213
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 4930: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:28, wdata:213 arr_wr:213
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 4950: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 26 din : 161
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 5330: uvm_test_top.env.a.m [MON] DATA WRITE addr:26 data:161
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 5330: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:26, wdata:161 arr_wr:161
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 5350: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 29 din : 126
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 5730: uvm_test_top.env.a.m [MON] DATA WRITE addr:29 data:126
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 5730: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:29, wdata:126 arr_wr:126
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 5750: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 0 din : 141
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 6130: uvm_test_top.env.a.m [MON] DATA WRITE addr:0 data:141
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 6130: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:0, wdata:141 arr_wr:141
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 6150: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 21 din : 107
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 6530: uvm_test_top.env.a.m [MON] DATA WRITE addr:21 data:107
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 6530: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:21, wdata:107 arr_wr:107
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 6550: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 2 din : 120
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 6930: uvm_test_top.env.a.m [MON] DATA WRITE addr:2 data:120
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 6930: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:2, wdata:120 arr_wr:120
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 6950: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 9 din : 156
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 7330: uvm_test_top.env.a.m [MON] DATA WRITE addr:9 data:156
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 7330: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:9, wdata:156 arr_wr:156
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 7350: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 19 din : 206
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 7730: uvm_test_top.env.a.m [MON] DATA WRITE addr:19 data:206
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 7730: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:19, wdata:206 arr_wr:206
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 7750: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 13 din : 17
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 8130: uvm_test_top.env.a.m [MON] DATA WRITE addr:13 data:17
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 8130: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:13, wdata:17 arr_wr:17
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 8150: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 31 din : 101
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 8530: uvm_test_top.env.a.m [MON] DATA WRITE addr:31 data:101
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 8530: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:31, wdata:101 arr_wr:101
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 8550: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 17 din : 163
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 8930: uvm_test_top.env.a.m [MON] DATA WRITE addr:17 data:163
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 8930: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:17, wdata:163 arr_wr:163
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 8950: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 1 din : 49
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 9330: uvm_test_top.env.a.m [MON] DATA WRITE addr:1 data:49
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 9330: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:1, wdata:49 arr_wr:49
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 9350: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 18 din : 199
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 9730: uvm_test_top.env.a.m [MON] DATA WRITE addr:18 data:199
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 9730: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:18, wdata:199 arr_wr:199
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 9750: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 3 din : 95
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 10130: uvm_test_top.env.a.m [MON] DATA WRITE addr:3 data:95
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 10130: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:3, wdata:95 arr_wr:95
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 10150: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 6 din : 8
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 10530: uvm_test_top.env.a.m [MON] DATA WRITE addr:6 data:8
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 10530: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:6, wdata:8 arr_wr:8
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 10550: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 15 din : 123
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 10930: uvm_test_top.env.a.m [MON] DATA WRITE addr:15 data:123
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 10930: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:15, wdata:123 arr_wr:123
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 10950: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 10 din : 146
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 11330: uvm_test_top.env.a.m [MON] DATA WRITE addr:10 data:146
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 11330: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:10, wdata:146 arr_wr:146
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 11350: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 22 din : 94
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 11730: uvm_test_top.env.a.m [MON] DATA WRITE addr:22 data:94
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 11730: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:22, wdata:94 arr_wr:94
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 11750: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 14 din : 223
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 12130: uvm_test_top.env.a.m [MON] DATA WRITE addr:14 data:223
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 12130: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:14, wdata:223 arr_wr:223
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 12150: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 27 din : 21
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 12530: uvm_test_top.env.a.m [MON] DATA WRITE addr:27 data:21
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 12530: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:27, wdata:21 arr_wr:21
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(247) @ 12550: uvm_test_top.env.a.d [DRV] DATA WRITE addr : 7 din : 64
+# KERNEL: UVM_INFO /home/runner/testbench.sv(440) @ 12930: uvm_test_top.env.a.m [MON] DATA WRITE addr:7 data:64
+# KERNEL: UVM_INFO /home/runner/testbench.sv(503) @ 12930: uvm_test_top.env.s [SCO] DATA WRITE OP  addr:7, wdata:64 arr_wr:64
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 13350: uvm_test_top.env.a.d [DRV] DATA READ addr : 16 dout : 217
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 13350: uvm_test_top.env.a.m [MON] DATA READ addr:16 data:217 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 13350: uvm_test_top.env.s [SCO] DATA MATCHED : addr:16, rdata:217
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 13770: uvm_test_top.env.a.d [DRV] DATA READ addr : 9 dout : 156
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 13770: uvm_test_top.env.a.m [MON] DATA READ addr:9 data:156 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 13770: uvm_test_top.env.s [SCO] DATA MATCHED : addr:9, rdata:156
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 14190: uvm_test_top.env.a.d [DRV] DATA READ addr : 0 dout : 141
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 14190: uvm_test_top.env.a.m [MON] DATA READ addr:0 data:141 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 14190: uvm_test_top.env.s [SCO] DATA MATCHED : addr:0, rdata:141
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 14610: uvm_test_top.env.a.d [DRV] DATA READ addr : 15 dout : 123
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 14610: uvm_test_top.env.a.m [MON] DATA READ addr:15 data:123 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 14610: uvm_test_top.env.s [SCO] DATA MATCHED : addr:15, rdata:123
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 15030: uvm_test_top.env.a.d [DRV] DATA READ addr : 22 dout : 94
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 15030: uvm_test_top.env.a.m [MON] DATA READ addr:22 data:94 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 15030: uvm_test_top.env.s [SCO] DATA MATCHED : addr:22, rdata:94
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 15450: uvm_test_top.env.a.d [DRV] DATA READ addr : 13 dout : 17
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 15450: uvm_test_top.env.a.m [MON] DATA READ addr:13 data:17 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 15450: uvm_test_top.env.s [SCO] DATA MATCHED : addr:13, rdata:17
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 15870: uvm_test_top.env.a.d [DRV] DATA READ addr : 1 dout : 49
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 15870: uvm_test_top.env.a.m [MON] DATA READ addr:1 data:49 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 15870: uvm_test_top.env.s [SCO] DATA MATCHED : addr:1, rdata:49
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 16290: uvm_test_top.env.a.d [DRV] DATA READ addr : 5 dout : 216
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 16290: uvm_test_top.env.a.m [MON] DATA READ addr:5 data:216 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 16290: uvm_test_top.env.s [SCO] DATA MATCHED : addr:5, rdata:216
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 16710: uvm_test_top.env.a.d [DRV] DATA READ addr : 25 dout : 5
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 16710: uvm_test_top.env.a.m [MON] DATA READ addr:25 data:5 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 16710: uvm_test_top.env.s [SCO] DATA MATCHED : addr:25, rdata:5
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 17130: uvm_test_top.env.a.d [DRV] DATA READ addr : 3 dout : 95
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 17130: uvm_test_top.env.a.m [MON] DATA READ addr:3 data:95 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 17130: uvm_test_top.env.s [SCO] DATA MATCHED : addr:3, rdata:95
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 17550: uvm_test_top.env.a.d [DRV] DATA READ addr : 29 dout : 126
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 17550: uvm_test_top.env.a.m [MON] DATA READ addr:29 data:126 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 17550: uvm_test_top.env.s [SCO] DATA MATCHED : addr:29, rdata:126
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 17970: uvm_test_top.env.a.d [DRV] DATA READ addr : 6 dout : 8
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 17970: uvm_test_top.env.a.m [MON] DATA READ addr:6 data:8 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 17970: uvm_test_top.env.s [SCO] DATA MATCHED : addr:6, rdata:8
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 18390: uvm_test_top.env.a.d [DRV] DATA READ addr : 21 dout : 107
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 18390: uvm_test_top.env.a.m [MON] DATA READ addr:21 data:107 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 18390: uvm_test_top.env.s [SCO] DATA MATCHED : addr:21, rdata:107
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 18810: uvm_test_top.env.a.d [DRV] DATA READ addr : 24 dout : 79
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 18810: uvm_test_top.env.a.m [MON] DATA READ addr:24 data:79 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 18810: uvm_test_top.env.s [SCO] DATA MATCHED : addr:24, rdata:79
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 19230: uvm_test_top.env.a.d [DRV] DATA READ addr : 17 dout : 163
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 19230: uvm_test_top.env.a.m [MON] DATA READ addr:17 data:163 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 19230: uvm_test_top.env.s [SCO] DATA MATCHED : addr:17, rdata:163
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 19650: uvm_test_top.env.a.d [DRV] DATA READ addr : 4 dout : 215
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 19650: uvm_test_top.env.a.m [MON] DATA READ addr:4 data:215 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 19650: uvm_test_top.env.s [SCO] DATA MATCHED : addr:4, rdata:215
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 20070: uvm_test_top.env.a.d [DRV] DATA READ addr : 20 dout : 112
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 20070: uvm_test_top.env.a.m [MON] DATA READ addr:20 data:112 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 20070: uvm_test_top.env.s [SCO] DATA MATCHED : addr:20, rdata:112
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 20490: uvm_test_top.env.a.d [DRV] DATA READ addr : 14 dout : 223
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 20490: uvm_test_top.env.a.m [MON] DATA READ addr:14 data:223 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 20490: uvm_test_top.env.s [SCO] DATA MATCHED : addr:14, rdata:223
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 20910: uvm_test_top.env.a.d [DRV] DATA READ addr : 28 dout : 213
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 20910: uvm_test_top.env.a.m [MON] DATA READ addr:28 data:213 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 20910: uvm_test_top.env.s [SCO] DATA MATCHED : addr:28, rdata:213
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 21330: uvm_test_top.env.a.d [DRV] DATA READ addr : 30 dout : 51
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 21330: uvm_test_top.env.a.m [MON] DATA READ addr:30 data:51 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 21330: uvm_test_top.env.s [SCO] DATA MATCHED : addr:30, rdata:51
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 21750: uvm_test_top.env.a.d [DRV] DATA READ addr : 10 dout : 146
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 21750: uvm_test_top.env.a.m [MON] DATA READ addr:10 data:146 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 21750: uvm_test_top.env.s [SCO] DATA MATCHED : addr:10, rdata:146
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 22170: uvm_test_top.env.a.d [DRV] DATA READ addr : 19 dout : 206
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 22170: uvm_test_top.env.a.m [MON] DATA READ addr:19 data:206 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 22170: uvm_test_top.env.s [SCO] DATA MATCHED : addr:19, rdata:206
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 22590: uvm_test_top.env.a.d [DRV] DATA READ addr : 8 dout : 80
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 22590: uvm_test_top.env.a.m [MON] DATA READ addr:8 data:80 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 22590: uvm_test_top.env.s [SCO] DATA MATCHED : addr:8, rdata:80
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 23010: uvm_test_top.env.a.d [DRV] DATA READ addr : 31 dout : 101
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 23010: uvm_test_top.env.a.m [MON] DATA READ addr:31 data:101 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 23010: uvm_test_top.env.s [SCO] DATA MATCHED : addr:31, rdata:101
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 23430: uvm_test_top.env.a.d [DRV] DATA READ addr : 26 dout : 161
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 23430: uvm_test_top.env.a.m [MON] DATA READ addr:26 data:161 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 23430: uvm_test_top.env.s [SCO] DATA MATCHED : addr:26, rdata:161
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 23850: uvm_test_top.env.a.d [DRV] DATA READ addr : 11 dout : 29
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 23850: uvm_test_top.env.a.m [MON] DATA READ addr:11 data:29 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 23850: uvm_test_top.env.s [SCO] DATA MATCHED : addr:11, rdata:29
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 24270: uvm_test_top.env.a.d [DRV] DATA READ addr : 23 dout : 111
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 24270: uvm_test_top.env.a.m [MON] DATA READ addr:23 data:111 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 24270: uvm_test_top.env.s [SCO] DATA MATCHED : addr:23, rdata:111
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 24690: uvm_test_top.env.a.d [DRV] DATA READ addr : 12 dout : 114
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 24690: uvm_test_top.env.a.m [MON] DATA READ addr:12 data:114 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 24690: uvm_test_top.env.s [SCO] DATA MATCHED : addr:12, rdata:114
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 25110: uvm_test_top.env.a.d [DRV] DATA READ addr : 18 dout : 199
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 25110: uvm_test_top.env.a.m [MON] DATA READ addr:18 data:199 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 25110: uvm_test_top.env.s [SCO] DATA MATCHED : addr:18, rdata:199
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 25530: uvm_test_top.env.a.d [DRV] DATA READ addr : 7 dout : 64
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 25530: uvm_test_top.env.a.m [MON] DATA READ addr:7 data:64 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 25530: uvm_test_top.env.s [SCO] DATA MATCHED : addr:7, rdata:64
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 25950: uvm_test_top.env.a.d [DRV] DATA READ addr : 27 dout : 21
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 25950: uvm_test_top.env.a.m [MON] DATA READ addr:27 data:21 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 25950: uvm_test_top.env.s [SCO] DATA MATCHED : addr:27, rdata:21
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/testbench.sv(295) @ 26370: uvm_test_top.env.a.d [DRV] DATA READ addr : 2 dout : 120
+# KERNEL: UVM_INFO /home/runner/testbench.sv(465) @ 26370: uvm_test_top.env.a.m [MON] DATA READ addr:2 data:120 
+# KERNEL: UVM_INFO /home/runner/testbench.sv(510) @ 26370: uvm_test_top.env.s [SCO] DATA MATCHED : addr:2, rdata:120
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM_INFO /home/build/vlib1/vlib/uvm-1.2/src/base/uvm_objection.svh(1271) @ 26370: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# KERNEL: UVM_INFO /home/build/vlib1/vlib/uvm-1.2/src/base/uvm_report_server.svh(869) @ 26370: reporter [UVM/REPORT/SERVER] 
+# KERNEL: --- UVM Report Summary ---
+# KERNEL: 
+# KERNEL: ** Report counts by severity
+# KERNEL: UVM_INFO :  201
+# KERNEL: UVM_WARNING :    0
+# KERNEL: UVM_ERROR :    0
+# KERNEL: UVM_FATAL :    0
+# KERNEL: ** Report counts by id
+# KERNEL: [DRV]    64
+# KERNEL: [MON]    66
+# KERNEL: [RNTST]     1
+# KERNEL: [SCO]    66
+# KERNEL: [TEST_DONE]     1
+# KERNEL: [UVM/RELNOTES]     1
+# KERNEL: [test]     2
+# KERNEL: 
+# RUNTIME: Info: RUNTIME_0068 uvm_root.svh (521): $finish called.
+# KERNEL: Time: 26370 ns,  Iteration: 63,  Instance: /tb,  Process: @INITIAL#662_3@.
+# KERNEL: stopped at time: 26370 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+acdb save;
+acdb report -db  fcover.acdb -txt -o cov.txt -verbose  
+# ACDB: Coverage report "cov.txt" was generated successfully.
+exec cat cov.txt;
+# +++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++       REPORT INFO       ++++++++++
+# +++++++++++++++++++++++++++++++++++++++++++++
+# 
+# 
+# SUMMARY
+# ===============================================
+# |     Property     |          Value           |
+# ===============================================
+# | User             | runner                   |
+# | Host             | 492961a81d39             |
+# | Tool             | Riviera-PRO 2022.04      |
+# | Report file      | /home/runner/cov.txt     |
+# | Report date      | 2024-04-18 10:38         |
+# | Report arguments | -verbose                 |
+# | Input file       | /home/runner/fcover.acdb |
+# | Input file date  | 2024-04-18 10:38         |
+# | Number of tests  | 1                        |
+# ===============================================
+# 
+# 
+# TEST DETAILS
+# ==============================================
+# | Property |              Value              |
+# ==============================================
+# | Test     | fcover.acdb:fcover              |
+# | Status   | Ok                              |
+# | Args     | asim +access+r                  |
+# | Simtime  | 26370 ns                        |
+# | Cputime  | 1.022 s                         |
+# | Seed     | 1                               |
+# | Date     | 2024-04-18 10:38                |
+# | User     | runner                          |
+# | Host     | 492961a81d39                    |
+# | Host os  | Linux64                         |
+# | Tool     | Riviera-PRO 2022.04 (simulator) |
+# ==============================================
+# 
+# 
+# +++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++     DESIGN HIERARCHY    ++++++++++
+# +++++++++++++++++++++++++++++++++++++++++++++
+# 
+# 
+# CUMULATIVE SUMMARY
+# =============================================
+# |    Coverage Type    | Weight | Hits/Total |
+# =============================================
+# | Covergroup Coverage |      1 |    65.945% |
+# |---------------------|--------|------------|
+# | Types               |        |      0 / 1 |
+# =============================================
+# CUMULATIVE INSTANCE-BASED COVERAGE: 65.945%
+# COVERED INSTANCES: 0 / 1
+# FILES: 1
+# 
+# 
+# CLASS - /mon : work.mon
+# 
+# 
+#     SUMMARY
+#     =============================================
+#     |    Coverage Type    | Weight | Hits/Total |
+#     =============================================
+#     | Covergroup Coverage |      1 |    65.945% |
+#     |---------------------|--------|------------|
+#     | Types               |        |      0 / 1 |
+#     =============================================
+#     WEIGHTED AVERAGE LOCAL: 65.945%
+# 
+# 
+#     COVERGROUP COVERAGE
+#     ======================================================================================
+#     |                    Covergroup                    |   Hits   |  Goal /  |  Status   |
+#     |                                                  |          | At Least |           |
+#     ======================================================================================
+#     | TYPE /mon/c                                      |  65.945% | 100.000% | Uncovered |
+#     ======================================================================================
+#     | INSTANCE <UNNAMED1>                              |  65.945% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.op                     | 100.000% | 100.000% | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin auto[readd]                                  |       32 |        1 | Covered   |
+#     | bin auto[writed]                                 |       32 |        1 | Covered   |
+#     | bin auto[rstdut]                                 |        2 |        1 | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.rst                    |   0.000% | 100.000% | Zero      |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin ld_low                                       |        0 |        1 | Zero      |
+#     | bin ld_high                                      |        0 |        1 | Zero      |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.addr                   |  96.969% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin range[0]                                     |        2 |        1 | Covered   |
+#     | bin range[1]                                     |        2 |        1 | Covered   |
+#     | bin range[2]                                     |        2 |        1 | Covered   |
+#     | bin range[3]                                     |        2 |        1 | Covered   |
+#     | bin range[4]                                     |        2 |        1 | Covered   |
+#     | bin range[5]                                     |        2 |        1 | Covered   |
+#     | bin range[6]                                     |        2 |        1 | Covered   |
+#     | bin range[7]                                     |        2 |        1 | Covered   |
+#     | bin range[8]                                     |        2 |        1 | Covered   |
+#     | bin range[9]                                     |        2 |        1 | Covered   |
+#     | bin range[10]                                    |        2 |        1 | Covered   |
+#     | bin range[11]                                    |        2 |        1 | Covered   |
+#     | bin range[12]                                    |        2 |        1 | Covered   |
+#     | bin range[13]                                    |        2 |        1 | Covered   |
+#     | bin range[14]                                    |        2 |        1 | Covered   |
+#     | bin range[15]                                    |        2 |        1 | Covered   |
+#     | bin range[16]                                    |        2 |        1 | Covered   |
+#     | bin range[17]                                    |        2 |        1 | Covered   |
+#     | bin range[18]                                    |        2 |        1 | Covered   |
+#     | bin range[19]                                    |        2 |        1 | Covered   |
+#     | bin range[20]                                    |        2 |        1 | Covered   |
+#     | bin range[21]                                    |        2 |        1 | Covered   |
+#     | bin range[22]                                    |        2 |        1 | Covered   |
+#     | bin range[23]                                    |        2 |        1 | Covered   |
+#     | bin range[24]                                    |        2 |        1 | Covered   |
+#     | bin range[25]                                    |        2 |        1 | Covered   |
+#     | bin range[26]                                    |        2 |        1 | Covered   |
+#     | bin range[27]                                    |        2 |        1 | Covered   |
+#     | bin range[28]                                    |        2 |        1 | Covered   |
+#     | bin range[29]                                    |        2 |        1 | Covered   |
+#     | bin range[30]                                    |        2 |        1 | Covered   |
+#     | bin range[31]                                    |        2 |        1 | Covered   |
+#     | bin other                                        |        0 |        1 | Zero      |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.din                    | 100.000% | 100.000% | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin lower                                        |       42 |        1 | Covered   |
+#     | bin mid                                          |       15 |        1 | Covered   |
+#     | bin high                                         |        7 |        1 | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.dout                   | 100.000% | 100.000% | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin lower                                        |       10 |        1 | Covered   |
+#     | bin mid                                          |       15 |        1 | Covered   |
+#     | bin high                                         |        7 |        1 | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | CROSS <UNNAMED1>::cross_write_operation_addr_din |  32.323% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin <range[0],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[1],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[2],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[3],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[4],high,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[5],high,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[6],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[7],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[8],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[9],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[10],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[11],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[12],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[13],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[14],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[15],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[16],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[17],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[18],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[19],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[20],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[21],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[22],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[23],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[24],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[25],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[26],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[27],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[28],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[29],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[30],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[31],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | ignore bin unused_ld                             |       32 |    -     | Occurred  |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | CROSS <UNNAMED1>::cross_read_operation_addr_dout |  32.323% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin <range[0],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[1],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[2],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[3],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[4],high,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[5],high,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[6],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[7],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[8],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[9],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[10],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[11],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[12],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[13],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[14],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[15],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[16],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[17],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[18],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[19],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[20],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[21],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[22],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[23],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[24],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[25],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[26],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[27],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[28],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[29],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[30],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[31],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     ======================================================================================
+# 
+# 
+# +++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++       DESIGN UNITS      ++++++++++
+# +++++++++++++++++++++++++++++++++++++++++++++
+# 
+# 
+# CUMULATIVE SUMMARY
+# =============================================
+# |    Coverage Type    | Weight | Hits/Total |
+# =============================================
+# | Covergroup Coverage |      1 |    65.945% |
+# |---------------------|--------|------------|
+# | Types               |        |      0 / 1 |
+# =============================================
+# CUMULATIVE DESIGN-BASED COVERAGE: 65.945%
+# COVERED DESIGN UNITS: 0 / 1
+# FILES: 1
+# 
+# 
+# CLASS - work.mon
+# 
+# 
+#     SUMMARY
+#     =============================================
+#     |    Coverage Type    | Weight | Hits/Total |
+#     =============================================
+#     | Covergroup Coverage |      1 |    65.945% |
+#     |---------------------|--------|------------|
+#     | Types               |        |      0 / 1 |
+#     =============================================
+#     WEIGHTED AVERAGE: 65.945%
+# 
+# 
+#     COVERGROUP COVERAGE
+#     ======================================================================================
+#     |                    Covergroup                    |   Hits   |  Goal /  |  Status   |
+#     |                                                  |          | At Least |           |
+#     ======================================================================================
+#     | TYPE /mon/c                                      |  65.945% | 100.000% | Uncovered |
+#     ======================================================================================
+#     | INSTANCE <UNNAMED1>                              |  65.945% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.op                     | 100.000% | 100.000% | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin auto[readd]                                  |       32 |        1 | Covered   |
+#     | bin auto[writed]                                 |       32 |        1 | Covered   |
+#     | bin auto[rstdut]                                 |        2 |        1 | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.rst                    |   0.000% | 100.000% | Zero      |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin ld_low                                       |        0 |        1 | Zero      |
+#     | bin ld_high                                      |        0 |        1 | Zero      |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.addr                   |  96.969% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin range[0]                                     |        2 |        1 | Covered   |
+#     | bin range[1]                                     |        2 |        1 | Covered   |
+#     | bin range[2]                                     |        2 |        1 | Covered   |
+#     | bin range[3]                                     |        2 |        1 | Covered   |
+#     | bin range[4]                                     |        2 |        1 | Covered   |
+#     | bin range[5]                                     |        2 |        1 | Covered   |
+#     | bin range[6]                                     |        2 |        1 | Covered   |
+#     | bin range[7]                                     |        2 |        1 | Covered   |
+#     | bin range[8]                                     |        2 |        1 | Covered   |
+#     | bin range[9]                                     |        2 |        1 | Covered   |
+#     | bin range[10]                                    |        2 |        1 | Covered   |
+#     | bin range[11]                                    |        2 |        1 | Covered   |
+#     | bin range[12]                                    |        2 |        1 | Covered   |
+#     | bin range[13]                                    |        2 |        1 | Covered   |
+#     | bin range[14]                                    |        2 |        1 | Covered   |
+#     | bin range[15]                                    |        2 |        1 | Covered   |
+#     | bin range[16]                                    |        2 |        1 | Covered   |
+#     | bin range[17]                                    |        2 |        1 | Covered   |
+#     | bin range[18]                                    |        2 |        1 | Covered   |
+#     | bin range[19]                                    |        2 |        1 | Covered   |
+#     | bin range[20]                                    |        2 |        1 | Covered   |
+#     | bin range[21]                                    |        2 |        1 | Covered   |
+#     | bin range[22]                                    |        2 |        1 | Covered   |
+#     | bin range[23]                                    |        2 |        1 | Covered   |
+#     | bin range[24]                                    |        2 |        1 | Covered   |
+#     | bin range[25]                                    |        2 |        1 | Covered   |
+#     | bin range[26]                                    |        2 |        1 | Covered   |
+#     | bin range[27]                                    |        2 |        1 | Covered   |
+#     | bin range[28]                                    |        2 |        1 | Covered   |
+#     | bin range[29]                                    |        2 |        1 | Covered   |
+#     | bin range[30]                                    |        2 |        1 | Covered   |
+#     | bin range[31]                                    |        2 |        1 | Covered   |
+#     | bin other                                        |        0 |        1 | Zero      |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.din                    | 100.000% | 100.000% | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin lower                                        |       42 |        1 | Covered   |
+#     | bin mid                                          |       15 |        1 | Covered   |
+#     | bin high                                         |        7 |        1 | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | COVERPOINT <UNNAMED1>::tr.dout                   | 100.000% | 100.000% | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin lower                                        |       10 |        1 | Covered   |
+#     | bin mid                                          |       15 |        1 | Covered   |
+#     | bin high                                         |        7 |        1 | Covered   |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | CROSS <UNNAMED1>::cross_write_operation_addr_din |  32.323% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin <range[0],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[1],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[2],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[3],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[4],high,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[5],high,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[6],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[7],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[8],lower,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[9],mid,auto[writed]>                  |        1 |        1 | Covered   |
+#     | bin <range[10],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[11],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[12],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[13],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[14],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[15],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[16],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[17],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[18],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[19],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[20],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[21],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[22],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[23],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[24],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[25],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[26],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[27],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[28],high,auto[writed]>                |        1 |        1 | Covered   |
+#     | bin <range[29],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | bin <range[30],lower,auto[writed]>               |        1 |        1 | Covered   |
+#     | bin <range[31],mid,auto[writed]>                 |        1 |        1 | Covered   |
+#     | ignore bin unused_ld                             |       32 |    -     | Occurred  |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | CROSS <UNNAMED1>::cross_read_operation_addr_dout |  32.323% | 100.000% | Uncovered |
+#     |--------------------------------------------------|----------|----------|-----------|
+#     | bin <range[0],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[1],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[2],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[3],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[4],high,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[5],high,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[6],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[7],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[8],lower,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[9],mid,auto[readd]>                   |        1 |        1 | Covered   |
+#     | bin <range[10],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[11],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[12],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[13],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[14],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[15],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[16],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[17],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[18],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[19],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[20],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[21],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[22],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[23],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[24],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[25],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[26],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[27],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[28],high,auto[readd]>                 |        1 |        1 | Covered   |
+#     | bin <range[29],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     | bin <range[30],lower,auto[readd]>                |        1 |        1 | Covered   |
+#     | bin <range[31],mid,auto[readd]>                  |        1 |        1 | Covered   |
+#     ======================================================================================
+# 
+exit
+# VSIM: Simulation has finished.
+Finding VCD file...
+./dump.vcd
+[2024-04-18 14:38:27 UTC] Opening EPWave...
+Done
